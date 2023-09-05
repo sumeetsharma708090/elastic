@@ -1,0 +1,28 @@
+version: "3"
+services:
+  zdepartmentservice:
+    build: ./zdepartmentservice
+    image: zdepartmentservice
+    environment:
+     SERVER_PORT: 8080
+     ELASTIC_APM_SECRET_TOKEN: "u5pOVdO06cALTZOJgR"
+     ELASTIC_APM_SERVER_URL: "https://aa5126a8d23d48269fac79ee5db601c3.apm.us-central1.gcp.cloud.es.io:443"
+     ELASTIC_APM_LOG_LEVEL: "DEBUG"
+     
+  zlogservice:
+    build: ./zlogservice
+    image: zlogservice
+    environment:
+     SERVER_PORT: 7070
+     ELASTIC_APM_SECRET_TOKEN: "u5pOVdO06cALTZOJgR"
+     ELASTIC_APM_SERVER_URL: "https://aa5126a8d23d48269fac79ee5db601c3.apm.us-central1.gcp.cloud.es.io:443"
+     ELASTIC_APM_LOG_LEVEL: "DEBUG"
+     
+  ZUserService:
+    build: ./zuserservice
+    image: zuserservice
+    environment:
+     SERVER_PORT: 9191
+     ELASTIC_APM_SECRET_TOKEN: "u5pOVdO06cALTZOJgR"
+     ELASTIC_APM_SERVER_URL: "https://aa5126a8d23d48269fac79ee5db601c3.apm.us-central1.gcp.cloud.es.io:443"
+     ELASTIC_APM_LOG_LEVEL: "DEBUG"
